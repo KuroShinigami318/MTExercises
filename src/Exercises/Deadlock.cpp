@@ -15,7 +15,7 @@ Deadlock::Deadlock()
 Deadlock::~Deadlock()
 {
 	std::lock_guard lock(m_mutex);
-	m_taskLooper.Push(TaskLooper_t::Task{ .runnable = &Deadlock::DoLastTask, .callback = [](int) {} });
+	m_taskLooper.Push(&Deadlock::DoLastTask, [](int) {});
 	m_shutdown = true;
 	m_cv.notify_one();
 	m_taskThread.join();
