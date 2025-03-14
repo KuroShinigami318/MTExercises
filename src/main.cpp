@@ -13,5 +13,6 @@ int main(int argc, char** argv)
 {
 	DurationTracker("main");
 	exercises::Deadlock deadlock;
+	utils::Log::Wait();
 	return 0;
 }
