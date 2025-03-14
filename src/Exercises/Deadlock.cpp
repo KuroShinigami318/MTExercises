@@ -28,7 +28,8 @@ void Deadlock::_Run()
 
 int Deadlock::DoLastTask()
 {
-	INFO_LOG("Deadlock", "Finalizing last task");
+	utils::Log::TextFormat textFormat(utils::Log::TextStyle::Reset, utils::RGBColor(0, 255, 0));
+	INFO_LOG_WITH_FORMAT(textFormat, "Deadlock", "Finalizing last task. Congratulations, you did it!");
 
 	return 0;
 }
