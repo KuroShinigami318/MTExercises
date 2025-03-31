@@ -1,5 +1,6 @@
 #pragma once
 #include "Utils/TaskLooper.h"
+#include "Utils/TimeTracking.h"
 
 namespace exercises
 {
@@ -18,6 +19,7 @@ private:
 	void _Run();
 
 private:
+	utils::TimeTracking m_timeTracking;
 	bool m_shutdown;
 	std::mutex m_mutex;
 	std::condition_variable m_cv;

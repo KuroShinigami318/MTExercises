@@ -5,7 +5,8 @@
 namespace exercises
 {
 Deadlock::Deadlock()
-	: m_shutdown(false)
+	: m_timeTracking(1000)
+	, m_shutdown(false)
 	, m_taskLooper(*this, m_mutex, m_cv)
 	, m_taskThread(&Deadlock::_Run, this)
 {
