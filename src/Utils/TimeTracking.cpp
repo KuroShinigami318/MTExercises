@@ -5,7 +5,7 @@
 namespace utils
 {
 TimeTracking::TimeTracking(long i_expectedRunningMS)
-	: m_timerDelayer((float) i_expectedRunningMS)
+	: m_timerDelayer(utils::make_unique<utils::TimerDelayer>((float) i_expectedRunningMS))
 {
 	m_timerConnection = m_timerDelayer->sig_onExpired.Connect(
 		[i_expectedRunningMS]()
